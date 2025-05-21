@@ -1,0 +1,89 @@
+{
+  "restaurantName": "El Sabor Casero",
+  "categories": [
+    {
+      "name": "Entradas",
+      "id": "entradas",
+      "items": [
+        {
+          "name": "Guacamole Fresco",
+          "description": "Aguacate Hass machacado al momento, con cilantro, cebolla, tomate y un toque de limón. Servido con totopos.",
+          "price": "85 MXN",
+          "image": "images/guacamole.jpg"
+        },
+        {
+          "name": "Queso Fundido con Chorizo",
+          "description": "Delicioso queso Oaxaca derretido con chorizo de la casa. Acompañado de tortillas.",
+          "price": "120 MXN",
+          "image": "images/queso_fundido.jpg" 
+        }
+      ]
+    },
+    {
+      "name": "Platos Fuertes",
+      "id": "platos-fuertes",
+      "items": [
+        {
+          "name": "Mole Poblano con Pollo",
+          "description": "Pechuga de pollo bañada en nuestro auténtico mole poblano, servida con arroz rojo y ajonjolí.",
+          "price": "180 MXN",
+          "image": "images/mole_poblano.jpg" 
+        },
+        {
+          "name": "Pescado a la Veracruzana",
+          "description": "Filete de huachinango cocinado en salsa de jitomate, aceitunas, alcaparras y hierbas finas.",
+          "price": "220 MXN",
+          "image": "images/pescado_veracruzana.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Postres",
+      "id": "postres",
+      "items": [
+        {
+          "name": "Flan Napolitano",
+          "description": "Clásico flan casero con caramelo y un toque de vainilla.",
+          "price": "70 MXN",
+          "image": "images/flan_napolitano.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Bebidas",
+      "id": "bebidas",
+      "items": [
+        {
+          "name": "Agua de Horchata",
+          "description": "Refrescante agua de arroz con canela.",
+          "price": "40 MXN",
+            "image": "images/agua_horchata.jpg"
+
+        },
+        {
+          "name": "Cerveza Artesanal Local",
+          "description": "Pregunta por nuestra selección.",
+          "price": "80 MXN",
+            "image": "images/cerveza_artesanal.jpg"
+        }
+      ]
+    }
+  ],
+  "socialMedia": [
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/artes.graficasg",
+      "iconClass": "fab fa-facebook-f" 
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/artesgraficasbcs/",
+      "iconClass": "fab fa-instagram"
+    },
+    {
+      "name": "WhatsApp",
+      "url": "", 
+      "iconClass": "fab fa-whatsapp"
+    }
+  ]
+}

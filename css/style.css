@@ -1,0 +1,120 @@
+body {
+    font-family: 'Arial', sans-serif; /* Elige una fuente bonita */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Color de fondo suave */
+    color: #333; /* Color de texto principal */
+    line-height: 1.6;
+}
+
+header {
+    background: #333; /* Color de fondo para el encabezado */
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#restaurant-logo {
+    max-width: 100px; /* Ajusta según tu logo */
+    margin-bottom: 10px;
+}
+
+#category-buttons {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+
+.category-button {
+    background-color: #ff7f50; /* Color coral para los botones (ejemplo) */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    margin: 5px;
+    border-radius: 25px; /* Botones redondeados */
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.category-button:hover, .category-button.active {
+    background-color: #ff6347; /* Un coral más oscuro al pasar el mouse o activo */
+}
+
+#menu-items-container {
+    display: flex;
+    flex-wrap: wrap; /* Para que las tarjetas se ajusten en varias líneas */
+    justify-content: center; /* Centrar las tarjetas */
+    gap: 20px; /* Espacio entre tarjetas */
+    padding: 0 15px;
+}
+
+.menu-item-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px; /* Ancho de las tarjetas */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.menu-item-card:hover {
+    transform: translateY(-5px); /* Pequeño efecto al pasar el mouse */
+}
+
+.menu-item-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.menu-item-card h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.menu-item-card p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.menu-item-card .price {
+    font-weight: bold;
+    color: #008000; /* Color verde para el precio (ejemplo) */
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+    margin-top: 30px;
+}
+
+#social-media-links a {
+    color: #ff7f50; /* Color coral para los iconos */
+    margin: 0 10px;
+    font-size: 1.8em; /* Tamaño de los iconos */
+    transition: color 0.3s ease;
+}
+
+#social-media-links a:hover {
+    color: #ff6347; /* Coral más oscuro */
+}
+
+/* Para hacerla un poco responsiva */
+@media (max-width: 768px) {
+    .category-button {
+        padding: 10px 15px;
+        font-size: 1em;
+    }
+    .menu-item-card {
+        width: 90%; /* Que las tarjetas ocupen más ancho en móviles */
+    }
+}
