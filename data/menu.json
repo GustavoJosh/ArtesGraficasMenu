@@ -2,69 +2,122 @@
   "restaurantName": "El Sabor Casero",
   "categories": [
     {
-      "name": "Entradas",
-      "id": "entradas",
+      "name": "Hot Dogs",
+      "id": "hotdogs",
       "items": [
         {
-          "name": "Guacamole Fresco",
-          "description": "Aguacate Hass machacado al momento, con cilantro, cebolla, tomate y un toque de limón. Servido con totopos.",
+          "name": "Hot Dog Sencillo",
+          "description": "Pan suave con salchicha asada, mayonesa, mostaza y cátsup.",
+          "price": "60 MXN",
+          "image": "images/hotdog_sencillo.jpg"
+        },
+        {
+          "name": "Hot Dog con Papas",
+          "description": "Hot dog clásico acompañado de papas a la francesa crujientes.",
           "price": "85 MXN",
-          "image": "images/guacamole.jpg"
+          "image": "images/hotdog_con_papas.jpg"
         },
         {
-          "name": "Queso Fundido con Chorizo",
-          "description": "Delicioso queso Oaxaca derretido con chorizo de la casa. Acompañado de tortillas.",
+          "name": "Hot Dog de Carne Deshebrada",
+          "description": "Hot dog relleno con jugosa carne deshebrada y queso derretido.",
+          "price": "95 MXN",
+          "image": "images/hotdog_deshebrada.jpg"
+        },
+        {
+          "name": "Hot Dog de Carne Asada",
+          "description": "Hot dog con trozos de carne asada al carbón, cebolla y guacamole.",
+          "price": "100 MXN",
+          "image": "images/hotdog_asada.jpg"
+        },
+        {
+          "name": "Hot Dog Burger",
+          "description": "Fusión de hamburguesa y hot dog en pan artesanal con doble carne.",
+          "price": "110 MXN",
+          "image": "images/hotdog_burger.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Papas",
+      "id": "papas",
+      "items": [
+        {
+          "name": "Orden de Papas",
+          "description": "Papas a la francesa doradas al momento.",
+          "price": "45 MXN",
+          "image": "images/orden_papas.jpg"
+        },
+        {
+          "name": "Media Orden de Papas",
+          "description": "Porción pequeña de papas a la francesa, ideal para acompañar.",
+          "price": "25 MXN",
+          "image": "images/media_orden_papas.jpg"
+        },
+        {
+          "name": "Papas con Carne",
+          "description": "Papas a la francesa cubiertas con carne asada y queso derretido.",
+          "price": "85 MXN",
+          "image": "images/papas_con_carne.jpg"
+        },
+        {
+          "name": "Papas con Salchicha",
+          "description": "Papas crujientes mezcladas con salchicha picada y salsas.",
+          "price": "75 MXN",
+          "image": "images/papas_con_salchicha.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Hamburguesas",
+      "id": "hamburguesas",
+      "items": [
+        {
+          "name": "Hamburguesa Sencilla",
+          "description": "Carne de res 100% a la plancha, lechuga, jitomate y aderezos.",
+          "price": "90 MXN",
+          "image": "images/hamburguesa_sencilla.jpg"
+        },
+        {
+          "name": "Hamburguesa con Papas",
+          "description": "Hamburguesa clásica acompañada de una orden de papas.",
+          "price": "115 MXN",
+          "image": "images/hamburguesa_con_papas.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Tortas",
+      "id": "tortas",
+      "items": [
+        {
+          "name": "Torta de Asada",
+          "description": "Pan bolillo relleno de carne asada, frijoles refritos y guacamole.",
+          "price": "95 MXN",
+          "image": "images/torta_asada.jpg"
+        },
+        {
+          "name": "Torta de Deshebrada",
+          "description": "Torta tradicional con carne deshebrada, lechuga y queso.",
+          "price": "90 MXN",
+          "image": "images/torta_deshebrada.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Burros",
+      "id": "burros",
+      "items": [
+        {
+          "name": "Burro de Deshebrada",
+          "description": "Tortilla de harina rellena de carne deshebrada y queso.",
           "price": "120 MXN",
-          "image": "images/queso_fundido.jpg" 
-        }
-      ]
-    },
-    {
-      "name": "Platos Fuertes",
-      "id": "platos-fuertes",
-      "items": [
-        {
-          "name": "Mole Poblano con Pollo",
-          "description": "Pechuga de pollo bañada en nuestro auténtico mole poblano, servida con arroz rojo y ajonjolí.",
-          "price": "180 MXN",
-          "image": "images/mole_poblano.jpg" 
+          "image": "images/burro_deshebrada.jpg"
         },
         {
-          "name": "Pescado a la Veracruzana",
-          "description": "Filete de huachinango cocinado en salsa de jitomate, aceitunas, alcaparras y hierbas finas.",
-          "price": "220 MXN",
-          "image": "images/pescado_veracruzana.jpg"
-        }
-      ]
-    },
-    {
-      "name": "Postres",
-      "id": "postres",
-      "items": [
-        {
-          "name": "Flan Napolitano",
-          "description": "Clásico flan casero con caramelo y un toque de vainilla.",
-          "price": "70 MXN",
-          "image": "images/flan_napolitano.jpg"
-        }
-      ]
-    },
-    {
-      "name": "Bebidas",
-      "id": "bebidas",
-      "items": [
-        {
-          "name": "Agua de Horchata",
-          "description": "Refrescante agua de arroz con canela.",
-          "price": "40 MXN",
-            "image": "images/agua_horchata.jpg"
-
-        },
-        {
-          "name": "Cerveza Artesanal Local",
-          "description": "Pregunta por nuestra selección.",
-          "price": "80 MXN",
-            "image": "images/cerveza_artesanal.jpg"
+          "name": "Burro de Asada",
+          "description": "Clásico burro norteño con carne asada, frijoles y pico de gallo.",
+          "price": "125 MXN",
+          "image": "images/burro_asada.jpg"
         }
       ]
     }
@@ -72,17 +125,17 @@
   "socialMedia": [
     {
       "name": "Facebook",
-      "url": "https://www.facebook.com/artes.graficasg",
-      "iconClass": "fab fa-facebook-f" 
+      "url": "",
+      "iconClass": "fab fa-facebook-f"
     },
     {
       "name": "Instagram",
-      "url": "https://www.instagram.com/artesgraficasbcs/",
+      "url": "",
       "iconClass": "fab fa-instagram"
     },
     {
       "name": "WhatsApp",
-      "url": "", 
+      "url": "",
       "iconClass": "fab fa-whatsapp"
     }
   ]

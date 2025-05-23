@@ -1,5 +1,5 @@
 body {
-    font-family: 'Arial', sans-serif; /* Elige una fuente bonita */
+    font-family: 'Spline Sans Mono', Arial, sans-serif; /* Elige una fuente bonita */
     margin: 0;
     padding: 0;
     background-color: #f4f4f4; /* Color de fondo suave */
@@ -9,9 +9,9 @@ body {
 
 header {
     background: #333; /* Color de fondo para el encabezado */
-    color: #fff;
+    color: rgb(255, 174, 0);
     padding: 1rem 0;
-    text-align: center;
+    text-align: center; 
     margin-bottom: 20px;
 }
 
