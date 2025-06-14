@@ -1,120 +1,511 @@
-body {
-    font-family: 'Spline Sans Mono', Arial, sans-serif; /* Elige una fuente bonita */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Color de fondo suave */
-    color: #333; /* Color de texto principal */
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Spline Sans Mono', Arial, sans-serif;
+    background-color: #FFF5EE;
+    color: #333;
     line-height: 1.6;
 }
 
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(199, 17, 17, 0.9), rgba(199, 17, 17, 0.9)), url('images/restaurant-bg.jpg') center/cover;
+    background-attachment: fixed;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+.hero-content {
+    max-width: 800px;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-logo {
+    max-width: 150px;
+    margin: 0 auto 20px auto;
+    display: block;
+    border-radius: 50%;
+    border: 4px solid black;
+    background-color: #fff;
+    padding: 4px;
+    box-shadow: 0 0 0 6px white;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-family: 'Cinzel', serif;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-primary {
+    background-color: #27AE60;
+    color: white;
+    border: 2px solid #27AE60;
+}
+
+.btn-primary:hover {
+    background-color: #229954;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background-color: white;
+    color: #c71111;
+}
+
+.hero-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.info-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+.info-item i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #27AE60;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Language Switcher */
+.language-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    padding: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.language-switcher button {
+    background: none;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.language-switcher button.active {
+    background: #c71111;
+    color: white;
+}
+
+/* WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+/* Header */
 header {
-    background: #333; /* Color de fondo para el encabezado */
-    color: rgb(255, 174, 0);
+    background: rgb(199, 17, 17);
+    color: rgb(255, 255, 255);
     padding: 1rem 0;
-    text-align: center; 
+    text-align: center;
     margin-bottom: 20px;
+    border-bottom: 8px solid black;
+    border-top: 8px solid black;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #restaurant-logo {
-    max-width: 100px; /* Ajusta según tu logo */
-    margin-bottom: 10px;
+    max-width: 100px;
+    margin: 0 auto 10px auto;
+    display: block;
+    border-radius: 50%;
+    border: 4px solid black;
+    background-color: #fff;
+    padding: 4px;
+    box-shadow: 0 0 0 6px white;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
 }
 
+/* Navigation */
 #category-buttons {
     text-align: center;
     margin-bottom: 30px;
     padding: 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 
 .category-button {
-    background-color: #ff7f50; /* Color coral para los botones (ejemplo) */
+    background-color: #333333;
     color: white;
     border: none;
     padding: 12px 25px;
-    margin: 5px;
-    border-radius: 25px; /* Botones redondeados */
+    border-radius: 25px;
     cursor: pointer;
     font-size: 1.1em;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.category-button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #27AE60;
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.category-button:hover:before,
+.category-button.active:before {
+    left: 0;
 }
 
 .category-button:hover, .category-button.active {
-    background-color: #ff6347; /* Un coral más oscuro al pasar el mouse o activo */
+    color: white;
+    transform: translateY(-2px);
 }
 
+/* Menu Items */
 #menu-items-container {
-    display: flex;
-    flex-wrap: wrap; /* Para que las tarjetas se ajusten en varias líneas */
-    justify-content: center; /* Centrar las tarjetas */
-    gap: 20px; /* Espacio entre tarjetas */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
     padding: 0 15px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .menu-item-card {
     background: #fff;
     border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    width: 300px; /* Ancho de las tarjetas */
+    border-radius: 15px;
+    overflow: hidden;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.2s ease-in-out;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 .menu-item-card:hover {
-    transform: translateY(-5px); /* Pequeño efecto al pasar el mouse */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .menu-item-card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 15px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.menu-item-content {
+    padding: 20px;
 }
 
 .menu-item-card h3 {
-    margin-top: 0;
+    margin: 0 0 10px 0;
     color: #333;
+    font-size: 1.3rem;
 }
 
 .menu-item-card p {
     font-size: 0.9em;
     color: #666;
+    margin-bottom: 15px;
 }
 
 .menu-item-card .price {
     font-weight: bold;
-    color: #008000; /* Color verde para el precio (ejemplo) */
-    font-size: 1.1em;
-    margin-top: 10px;
+    color: #008000;
+    font-size: 1.2em;
+    display: inline-block;
+    background: #f0f8f0;
+    padding: 5px 15px;
+    border-radius: 20px;
 }
 
+/* Promo Badge */
+.promo-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff4757;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Reviews Section */
+.reviews-section {
+    background: #f8f8f8;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.reviews-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.review-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.review-stars {
+    color: #ffd700;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.review-text {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.review-author {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Location Section */
+.location-section {
+    padding: 60px 20px;
+    background: white;
+}
+
+.location-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.location-info h2 {
+    color: #c71111;
+    margin-bottom: 20px;
+}
+
+.location-details {
+    margin-bottom: 30px;
+}
+
+.location-details p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.location-details i {
+    color: #c71111;
+    width: 20px;
+}
+
+#map {
+    height: 400px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Footer */
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 40px 20px;
     background: #333;
     color: #fff;
-    margin-top: 30px;
+}
+
+#social-media-links {
+    margin: 20px 0;
 }
 
 #social-media-links a {
-    color: #ff7f50; /* Color coral para los iconos */
-    margin: 0 10px;
-    font-size: 1.8em; /* Tamaño de los iconos */
-    transition: color 0.3s ease;
+    color: #ff7f50;
+    margin: 0 15px;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
 #social-media-links a:hover {
-    color: #ff6347; /* Coral más oscuro */
+    color: #ff6347;
+    transform: translateY(-3px);
 }
 
-/* Para hacerla un poco responsiva */
+/* Download Menu Button */
+.download-menu {
+    margin: 20px 0;
+}
+
+.download-menu a {
+    background: #27AE60;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.download-menu a:hover {
+    background: #229954;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
 @media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .location-content {
+        grid-template-columns: 1fr;
+    }
+
+    #map {
+        height: 300px;
+    }
+
     .category-button {
-        padding: 10px 15px;
+        padding: 10px 20px;
         font-size: 1em;
     }
-    .menu-item-card {
-        width: 90%; /* Que las tarjetas ocupen más ancho en móviles */
-    }
+}
+
+/* Hidden class for language switching */
+.hidden {
+    display: none;
 }

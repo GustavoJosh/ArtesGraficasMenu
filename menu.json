@@ -1,0 +1,113 @@
+{
+    "restaurantName": "La Creme",
+    "logoPath": "images/logo.png",
+    "restaurantTimes": {
+        "es": "Lun-Vie: 8:00am - 10:00pm | Sáb-Dom: 9:00am - 11:00pm",
+        "en": "Mon-Fri: 8:00am - 10:00pm | Sat-Sun: 9:00am - 11:00pm"
+    },
+    "categories": [
+        {
+            "id": "hotdogs",
+            "name": { "es": "Hot Dogs", "en": "Hot Dogs" },
+            "items": [
+                {
+                    "name": { "es": "Hot Dog Clásico", "en": "Classic Hot Dog" },
+                    "description": { "es": "Salchicha de res con mostaza y ketchup", "en": "Beef sausage with mustard and ketchup" },
+                    "price": "45 MXN",
+                    "image": "images/hotdog_asada.jpg"
+                },
+                {
+                    "name": { "es": "Hot Dog Especial", "en": "Special Hot Dog" },
+                    "description": { "es": "Con tocino, queso y cebolla caramelizada", "en": "With bacon, cheese and caramelized onion" },
+                    "price": "65 MXN",
+                    "image": "images/hotdog_sencillo.jpg",
+                    "promo": "10% OFF"
+                },
+                {
+                    "name": { "es": "Hotdog con papas", "en": "Hotdog w/ side of fries"},
+                    "description": { "es": "Con tocino, aderezo y media orden de papas", "en": "With bacon, dressing and half an order of french fries" },
+                    "price": "80 MXN",
+                    "image": "images/hotdog_sencillo.jpg"
+                }
+            ]
+        },
+        {
+            "id": "papas",
+            "name": { "es": "Papas", "en": "Fries" },
+            "items": [
+                {
+                    "name": { "es": "Papas Fritas", "en": "French Fries" },
+                    "description": { "es": "Papas doradas y crujientes", "en": "Golden and crispy fries" },
+                    "price": "35 MXN",
+                    "image": "images/papas_con_salchicha.jpg"
+                },
+                {
+                    "name": { "es": "Papas con Queso", "en": "Cheese Fries" },
+                    "description": { "es": "Papas bañadas en queso cheddar", "en": "Fries covered in cheddar cheese" },
+                    "price": "50 MXN",
+                    "image": "images/papas_con_carne.jpg"
+                }
+            ]
+        },
+        {
+            "id": "hamburguesas",
+            "name": { "es": "Hamburguesas", "en": "Burgers" },
+            "items": [
+                {
+                    "name": { "es": "Hamburguesa Sencilla", "en": "Simple Burger" },
+                    "description": { "es": "Carne de res 100% a la plancha, lechuga, jitomate y aderezos.", "en": "100% grilled beef, lettuce, tomato and dressings." },
+                    "price": "90 MXN",
+                    "image": "images/hamburguesa.jpg"
+                },
+                {
+                    "name": { "es": "Hamburguesa con Papas", "en": "Burger with Fries" },
+                    "description": { "es": "Hamburguesa clásica acompañada de una orden de papas.", "en": "Classic burger served with an order of fries." },
+                    "price": "115 MXN",
+                    "image": "images/hamburguesa_con_papas.jpg"
+                }
+            ]
+        },
+        {
+            "id": "tortas",
+            "name": { "es": "Tortas", "en": "Sandwiches" },
+            "items": [
+                {
+                    "name": { "es": "Torta de Milanesa", "en": "Breaded Cutlet Sandwich" },
+                    "description": { "es": "Milanesa de pollo con aguacate y frijoles", "en": "Breaded chicken with avocado and beans" },
+                    "price": "75 MXN",
+                    "image": "images/torta_asada.jpg"
+                },
+                {
+                    "name": { "es": "Torta Cubana", "en": "Cuban Sandwich" },
+                    "description": { "es": "Jamón, queso, milanesa y pierna", "en": "Ham, cheese, breaded cutlet and pork" },
+                    "price": "95 MXN",
+                    "image": "images/torta_deshebrada.jpg"
+                }
+            ]
+        },
+        {
+            "id": "burros",
+            "name": { "es": "Burros", "en": "Burritos" },
+            "items": [
+                {
+                    "name": { "es": "Burro de Carne Asada", "en": "Grilled Beef Burrito" },
+                    "description": { "es": "Tortilla de harina con carne asada, frijoles y salsa", "en": "Flour tortilla with grilled beef, beans and salsa" },
+                    "price": "85 MXN",
+                    "image": "images/burro_asada.jpg"
+                },
+                {
+                    "name": { "es": "Burro de Pollo", "en": "Chicken Burrito" },
+                    "description": { "es": "Pollo a la plancha con arroz y verduras", "en": "Grilled chicken with rice and vegetables" },
+                    "price": "80 MXN",
+                    "image": "images/burro_deshebrada.jpg",
+                    "promo": "2x1 Martes"
+                }
+            ]
+        }
+    ],
+    "socialMedia": [
+        { "name": "Facebook", "url": "https://facebook.com/lacreme", "iconClass": "fab fa-facebook" },
+        { "name": "Instagram", "url": "https://instagram.com/lacreme", "iconClass": "fab fa-instagram" },
+        { "name": "TikTok", "url": "https://tiktok.com/@lacreme", "iconClass": "fab fa-tiktok" }
+    ]
+}

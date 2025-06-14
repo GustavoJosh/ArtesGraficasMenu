@@ -4,34 +4,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="restaurant-title">Menú del Restaurante</title>
-    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Arbutus+Slab&family=Cinzel:wght@400..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+       
+    </style>
 </head>
 <body>
-    <header>
-        <img src="images/logo.png" alt="Logo del Restaurante" id="restaurant-logo" style="display:none;">
-        <h1 id="restaurant-name-header"></h1>
-    </header>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button id="lang-es" class="active" onclick="switchLanguage('es')">ES</button>
+        <button id="lang-en" onclick="switchLanguage('en')">EN</button>
+    </div>
 
-    <nav id="category-buttons">
-        </nav>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/521234567890" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-    <main id="menu-items-container">
-        </main>
-
-    <footer>
-        <h2>Síguenos en Redes Sociales</h2>
-        <div id="social-media-links">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <img src="images/logo.png" alt="Logo del Restaurante" class="hero-logo">
+            <h1 class="hero-title" id="hero-restaurant-name">La Creme</h1>
+            <p class="hero-subtitle" data-es="Sabores auténticos que cuentan historias" data-en="Authentic flavors that tell stories">Sabores auténticos que cuentan historias</p>
+            
+            <div class="hero-buttons">
+                <a href="#menu" class="btn-primary">
+                    <i class="fas fa-utensils"></i>
+                    <span data-es="Ver Menú" data-en="View Menu">Ver Menú</span>
+                </a>
+                <a href="#location" class="btn-secondary">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span data-es="Ubicación" data-en="Location">Ubicación</span>
+                </a>
             </div>
-        <p>&copy; <span id="current-year"></span> <span id="restaurant-name-footer"></span>. Todos los derechos reservados.</p>
+
+            <div class="hero-info">
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <h3 data-es="Horario" data-en="Hours">Horario</h3>
+                    <p id="hero-hours">Lun-Vie: 8:00am - 10:00pm<br>Sáb-Dom: 9:00am - 11:00pm</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <h3 data-es="Teléfono" data-en="Phone">Teléfono</h3>
+                    <p>(123) 456-7890</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-star"></i>
+                    <h3 data-es="Calificación" data-en="Rating">Calificación</h3>
+                    <p>4.8/5 ⭐⭐⭐⭐⭐</p>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down fa-2x"></i>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        <header>
+            <img src="images/logo.png" alt="Logo del Restaurante" id="restaurant-logo">
+            <h1 id="restaurant-name-header"></h1>
+            <p data-es="Conoce nuestras opciones, seguro que más de una te fascinará." data-en="Discover our options, surely more than one will fascinate you.">Conoce nuestras opciones, seguro que más de una te fascinará.</p>
+        </header>
+
+        <nav id="category-buttons"></nav>
+        <main id="menu-items-container"></main>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <h2 data-es="Lo que dicen nuestros clientes" data-en="What our customers say">Lo que dicen nuestros clientes</h2>
+        <div class="reviews-container">
+            <div class="review-card">
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <p class="review-text" data-es="¡La mejor hamburguesa que he probado! El servicio es excelente y el ambiente muy acogedor." data-en="The best burger I've ever had! The service is excellent and the atmosphere is very welcoming.">"¡La mejor hamburguesa que he probado! El servicio es excelente y el ambiente muy acogedor."</p>
+                <p class="review-author">- María García</p>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <p class="review-text" data-es="Las papas son increíbles y las porciones muy generosas. ¡Definitivamente volveré!" data-en="The fries are amazing and the portions are very generous. I'll definitely come back!">"Las papas son increíbles y las porciones muy generosas. ¡Definitivamente volveré!"</p>
+                <p class="review-author">- Carlos Mendoza</p>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                <p class="review-text" data-es="Un lugar perfecto para disfrutar con familia y amigos. La comida es deliciosa." data-en="A perfect place to enjoy with family and friends. The food is delicious.">"Un lugar perfecto para disfrutar con familia y amigos. La comida es deliciosa."</p>
+                <p class="review-author">- Ana López</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="location-section">
+        <div class="location-content">
+            <div class="location-info">
+                <h2 data-es="Encuéntranos" data-en="Find Us">Encuéntranos</h2>
+                <div class="location-details">
+                    <p><i class="fas fa-map-marker-alt"></i> <span data-es="Calle Principal #123, Centro, La Paz, BCS" data-en="Main Street #123, Downtown, La Paz, BCS">Calle Principal #123, Centro, La Paz, BCS</span></p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> info@lacreme.com</p>
+                    <p><i class="fas fa-clock"></i> <span id="location-hours">Lun-Vie: 8:00am - 10:00pm | Sáb-Dom: 9:00am - 11:00pm</span></p>
+                </div>
+                <a href="https://maps.google.com" target="_blank" class="btn-primary">
+                    <i class="fas fa-directions"></i>
+                    <span data-es="Cómo llegar" data-en="Get Directions">Cómo llegar</span>
+                </a>
+            </div>
+            <div id="map">
+                <!-- Aquí iría el mapa de Google Maps -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3736.2681752806!2d-110.3109!3d24.1426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDA4JzMzLjQiTiAxMTDCsDE4JzM5LjIiVw!5e0!3m2!1ses!2smx!4v1234567890" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h2 data-es="¡Síguenos en redes sociales!" data-en="Follow us on social media!">¡Síguenos en redes sociales!</h2>
+        <div id="social-media-links"></div>
+        
+        <div class="download-menu">
+            <a href="menu.pdf" download>
+                <i class="fas fa-download"></i>
+                <span data-es="Descargar Menú PDF" data-en="Download Menu PDF">Descargar Menú PDF</span>
+            </a>
+        </div>
+        
+        <p><span id="restaurantTimes"></span></p>
+        <p>&copy; <span id="current-year"></span> <span id="restaurant-name-footer"></span>. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></p>
     </footer>
 
-    <script src="js/app.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>
-
-<!-- Falta agregar horarios del negocio, ubicacion en google maps, boton directo al whatsapp, opiniones, menu descargable, menu en ingles -->
-<!-- recomendaciones, codigos promocionales?, historia del restaurante? boton para compartir en redes?, galeria de fotos?  -->
