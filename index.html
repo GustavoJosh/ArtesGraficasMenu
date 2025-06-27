@@ -7,30 +7,703 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Arbutus+Slab&family=Cinzel:wght@400..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Arbutus+Slab&family=Cinzel:wght@400..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Spline+Sans+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <style>
-       
+        :root {
+        /* Colores principales */
+        --color-primary: #c71111;
+        --color-primary-rgb: 199, 17, 17;
+        --color-secondary: #27AE60;
+        --color-secondary-dark: #229954;
+        
+        /* Colores de fondo */
+        --bg-light: #FFF5EE;
+        --bg-white: #ffffff;
+        --bg-gray-light: #f8f8f8;
+        --bg-dark: #333333;
+        
+        /* Colores de texto */
+        --text-primary: #333;
+        --text-secondary: #666;
+        --text-white: #ffffff;
+        
+        /* Colores de acento */
+        --color-whatsapp: #25d366;
+        --color-gold: #ffd700;
+        --color-green: #008000;
+        --color-coral: #ff7f50;
+        --color-tomato: #ff6347;
+        --color-danger: #ff4757;
+        
+        /* Colores con transparencia */
+        --bg-overlay: rgba(255, 255, 255, 0.1);
+        --bg-glass: rgba(255, 255, 255, 0.25);
+        --bg-glass-light: rgba(255, 255, 255, 0.75);
+        --bg-glass-heavy: rgba(255, 255, 255, 0.9);
+        
+        /* Bordes */
+        --border-light: #ddd;
+        --border-glass: rgba(255, 255, 255, 0.18);
+        
+        /* Sombras */
+        --shadow-light: 0 2px 5px rgba(0, 0, 0, 0.1);
+        --shadow-medium: 0 4px 10px rgba(0, 0, 0, 0.1);
+        --shadow-heavy: 0 8px 20px rgba(0, 0, 0, 0.15);
+        --shadow-whatsapp: 0 6px 16px rgba(37, 211, 102, 0.18);
+        --shadow-primary: 0 8px 24px rgba(199, 17, 17, 0.09);
+        --shadow-secondary: 0 12px 32px rgba(39, 174, 96, 0.18);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Spline Sans Mono', Arial, sans-serif;
+        background-color: var(--bg-light);
+        color: var(--text-primary);
+        line-height: 1.6;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        background: linear-gradient(rgba(var(--color-primary-rgb), 0.9), rgba(var(--color-primary-rgb), 0.9)), url('images/restaurant-bg.jpg') center/cover;
+        background-attachment: fixed;
+        color: var(--text-white);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+        position: relative;
+        transform: translateZ(0);
+        will-change: transform;
+    }
+
+    .hero-content {
+        max-width: 800px;
+        animation: fadeInUp 1s ease-out;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .hero-logo {
+        max-width: 150px;
+        margin: 0 auto 20px auto;
+        display: block;
+        border-radius: 50%;
+        border: 4px solid black;
+        background-color: var(--bg-white);
+        padding: 4px;
+        box-shadow: 0 0 0 6px var(--text-white);
+        object-fit: cover;
+        aspect-ratio: 1 / 1;
+        image-rendering: -webkit-optimize-contrast;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        font-family: 'Cinzel', serif;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        font-weight: 300;
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 3rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 12px 30px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .btn-primary {
+        background-color: var(--color-secondary);
+        color: var(--text-white);
+        border: 2px solid var(--color-secondary);
+    }
+
+    .btn-primary:hover {
+        background-color: var(--color-secondary-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-secondary {
+        background-color: transparent;
+        color: var(--text-white);
+        border: 2px solid var(--text-white);
+    }
+
+    .btn-secondary:hover {
+        background-color: var(--bg-white);
+        color: var(--color-primary);
+    }
+
+    .hero-info {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+
+    .info-item {
+        background: var(--bg-overlay);
+        padding: 1.5rem;
+        border-radius: 15px;
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+    }
+
+    .info-item i {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        color: var(--color-secondary);
+    }
+
+    .scroll-indicator {
+        position: absolute;
+        bottom: 2rem;
+        animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-10px);
+        }
+        60% {
+            transform: translateY(-5px);
+        }
+    }
+
+    /* Language Switcher */
+    .language-switcher {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+        background: var(--bg-glass-heavy);
+        border-radius: 25px;
+        padding: 5px;
+        box-shadow: var(--shadow-medium);
+    }
+
+    .language-switcher button {
+        background: none;
+        border: none;
+        padding: 8px 15px;
+        cursor: pointer;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+        font-weight: bold;
+    }
+
+    .language-switcher button.active {
+        background: var(--color-primary);
+        color: var(--text-white);
+    }
+
+    /* WhatsApp Button */
+    .whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: var(--color-whatsapp);
+        color: var(--text-white);
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 999;
+    }
+
+    .whatsapp-float:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Header */
+    header {
+        background: var(--color-primary);
+        color: var(--text-white);
+        padding: 1rem 0;
+        text-align: center;
+        margin-bottom: 20px;
+        border-bottom: 8px solid black;
+        border-top: 8px solid black;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #restaurant-logo {
+        max-width: 100px;
+        margin: 0 auto 10px auto;
+        display: block;
+        border-radius: 50%;
+        border: 4px solid black;
+        background-color: var(--bg-white);
+        padding: 4px;
+        box-shadow: 0 0 0 6px var(--text-white);
+        object-fit: cover;
+        aspect-ratio: 1 / 1;
+    }
+
+    /* Navigation */
+    #category-buttons {
+        text-align: center;
+        margin-bottom: 30px;
+        padding: 0 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .category-button {
+        background-color: var(--bg-dark);
+        color: var(--text-white);
+        border: none;
+        padding: 12px 25px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 1.1em;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .category-button:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--color-secondary);
+        transition: left 0.3s ease;
+        z-index: -1;
+    }
+
+    .category-button:hover:before,
+    .category-button.active:before {
+        left: 0;
+    }
+
+    .category-button:hover,
+    .category-button.active {
+        color: var(--text-white);
+        transform: translateY(-2px);
+    }
+
+    /* Menu Items */
+    #menu-items-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 0 15px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .menu-item-card {
+        background: var(--bg-white);
+        border: 1px solid var(--border-light);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: var(--shadow-light);
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .menu-item-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-heavy);
+    }
+
+    .menu-item-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .menu-item-content {
+        padding: 20px;
+    }
+
+    .menu-item-card h3 {
+        margin: 0 0 10px 0;
+        color: var(--text-primary);
+        font-size: 1.3rem;
+    }
+
+    .menu-item-card p {
+        font-size: 0.9em;
+        color: var(--text-secondary);
+        margin-bottom: 15px;
+    }
+
+    .menu-item-card .price {
+        font-weight: bold;
+        color: var(--color-green);
+        font-size: 1.2em;
+        display: inline-block;
+        background: #f0f8f0;
+        padding: 5px 15px;
+        border-radius: 20px;
+    }
+
+    /* Promo Badge */
+    .promo-badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: var(--color-danger);
+        color: var(--text-white);
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
+
+    /* Reviews Section */
+    .reviews-section {
+        background: var(--bg-gray-light);
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .reviews-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .review-card {
+        background: var(--bg-white);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: var(--shadow-medium);
+    }
+
+    .review-stars {
+        color: var(--color-gold);
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .review-text {
+        font-style: italic;
+        color: var(--text-secondary);
+        margin-bottom: 15px;
+    }
+
+    .review-author {
+        font-weight: bold;
+        color: var(--text-primary);
+    }
+
+    /* Location Section */
+    .location-section {
+        padding: 60px 20px;
+        background: var(--bg-white);
+    }
+
+    .location-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .location-info h2 {
+        color: var(--color-primary);
+        margin-bottom: 20px;
+    }
+
+    .location-details {
+        margin-bottom: 30px;
+    }
+
+    .location-details p {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .location-details i {
+        color: var(--color-primary);
+        width: 20px;
+    }
+
+    #map {
+        height: 400px;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: var(--shadow-medium);
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+        padding: 40px 20px;
+        background: var(--bg-dark);
+        color: var(--text-white);
+    }
+
+    #social-media-links {
+        margin: 20px 0;
+    }
+
+    #social-media-links a {
+        color: var(--color-coral);
+        margin: 0 15px;
+        font-size: 2rem;
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+
+    #social-media-links a:hover {
+        color: var(--color-tomato);
+        transform: translateY(-3px);
+    }
+
+    /* Download Menu Button */
+    .download-menu {
+        margin: 20px 0;
+    }
+
+    .download-menu a {
+        background: var(--color-secondary);
+        color: var(--text-white);
+        padding: 12px 30px;
+        border-radius: 25px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+    }
+
+    .download-menu a:hover {
+        background: var(--color-secondary-dark);
+        transform: translateY(-2px);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .hero-title {
+            font-size: 2rem;
+        }
+
+        .hero-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .location-content {
+            grid-template-columns: 1fr;
+        }
+
+        #map {
+            height: 300px;
+        }
+
+        .category-button {
+            padding: 10px 20px;
+            font-size: 1em;
+        }
+    }
+
+    /* Hidden class for language switching */
+    .hidden {
+        display: none;
+    }
+
+    /* === Additions for visual upgrade === */
+
+    /* Glassmorphism for overlays/cards */
+    .glass {
+        background: var(--bg-glass);
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--border-glass);
+    }
+
+    /* Reveal animations */
+    .reveal-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.7s cubic-bezier(.42, 0, .58, 1), transform 0.7s cubic-bezier(.42, 0, .58, 1);
+    }
+
+    .reveal-on-scroll.revealed {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Animated menu item cards */
+    .menu-item-card {
+        transition: box-shadow 0.3s, transform 0.3s;
+    }
+
+    .menu-item-card.revealed {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .menu-item-card:not(.revealed) {
+        opacity: 0;
+        transform: translateY(40px) scale(0.97);
+    }
+
+    .menu-item-card:hover {
+        box-shadow: var(--shadow-secondary);
+        transform: translateY(-8px) scale(1.025);
+    }
+
+    /* Parallax hero background (already set up but can be enhanced) */
+    .hero-section {
+        background-attachment: fixed;
+        background-position: center 0;
+        background-size: cover;
+        transition: background-position 0.2s ease;
+    }
+
+    /* Language switcher: subtle shadow & scale */
+    .language-switcher {
+        box-shadow: var(--shadow-primary);
+        transition: box-shadow 0.2s;
+    }
+
+    .language-switcher button:focus {
+        outline: 2px solid var(--color-secondary);
+        outline-offset: 2px;
+    }
+
+    .whatsapp-float {
+        box-shadow: var(--shadow-whatsapp);
+        transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .whatsapp-float:focus {
+        outline: 2px solid var(--color-whatsapp);
+        outline-offset: 2px;
+    }
+
+    .scroll-indicator {
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+
+    .scroll-indicator:hover,
+    .scroll-indicator:focus {
+        transform: translateY(6px) scale(1.1);
+        outline: none;
+    }
+
+    /* Glass effect for reviews and info cards */
+    .review-card,
+    .info-item,
+    .location-info {
+        background: var(--bg-glass-light);
+        box-shadow: 0 4px 24px rgba(199, 17, 17, 0.07);
+        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(4px);
+    }
+
+    /* Subtle shadow for menu items */
+    .menu-item-card {
+        box-shadow: 0 2px 10px rgba(39, 174, 96, 0.05);
+    }
+
+    /* Improve footer links */
+    #social-media-links a:focus {
+        outline: 2px solid var(--color-coral);
+        outline-offset: 2px;
+        color: var(--color-tomato);
+    }
+
+    /* Add revealed class to sections for fade-in */
+    section,
+    footer,
+    header {
+        will-change: opacity, transform;
+    }
     </style>
+
+   
 </head>
 <body>
     <!-- Language Switcher -->
-    <div class="language-switcher">
-        <button id="lang-es" class="active" onclick="switchLanguage('es')">ES</button>
-        <button id="lang-en" onclick="switchLanguage('en')">EN</button>
+    <div class="language-switcher" role="group" aria-label="Selector de idioma">
+        <button id="lang-es" class="active" onclick="switchLanguage('es')" aria-pressed="true" tabindex="0">ES</button>
+        <button id="lang-en" onclick="switchLanguage('en')" aria-pressed="false" tabindex="0">EN</button>
     </div>
 
     <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/521234567890" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+    <a href="https://wa.me/521234567890" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp" tabindex="0">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section class="hero-section reveal-on-scroll">
         <div class="hero-content">
             <img src="images/logo.png" alt="Logo del Restaurante" class="hero-logo">
             <h1 class="hero-title" id="hero-restaurant-name">Su restaurante</h1>
-            <p class="hero-subtitle" data-es="Sabores autenticos que cuentan historias" data-en="Authentic flavors that create stories">Sabores autenticos que cuentan historiasy</p>
+            <p class="hero-subtitle" data-es="Sabores auténticos que cuentan historias" data-en="Authentic flavors that create stories">Sabores auténticos que cuentan historias</p>
 
             <div class="hero-buttons">
                 <a href="#menu" class="btn-primary">
@@ -44,30 +717,30 @@
             </div>
 
             <div class="hero-info">
-                <div class="info-item">
+                <div class="info-item glass">
                     <i class="fas fa-clock"></i>
                     <h3 data-es="Horario" data-en="Hours">Horario</h3>
                     <p id="hero-hours">Lun-Vie: 8:00am - 10:00pm<br>Sáb-Dom: 9:00am - 11:00pm</p>
                 </div>
-                <div class="info-item">
+                <div class="info-item glass">
                     <i class="fas fa-phone"></i>
                     <h3 data-es="Teléfono" data-en="Phone">Teléfono</h3>
                     <p>(123) 456-7890</p>
                 </div>
-                <div class="info-item">
+                <div class="info-item glass">
                     <i class="fas fa-star"></i>
                     <h3 data-es="Calificación" data-en="Rating">Calificación</h3>
                     <p>4.8/5 ⭐⭐⭐⭐⭐</p>
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
+        <div class="scroll-indicator" tabindex="0" aria-label="Desplazar para ver el menú">
             <i class="fas fa-chevron-down fa-2x"></i>
         </div>
     </section>
 
     <!-- Menu Section -->
-    <section id="menu">
+    <section id="menu" class="reveal-on-scroll">
         <header>
             <img src="images/logo.png" alt="Logo del Restaurante" id="restaurant-logo">
             <h1 id="restaurant-name-header"></h1>
@@ -79,31 +752,31 @@
     </section>
 
     <!-- Reviews Section -->
-    <section class="reviews-section">
+    <section class="reviews-section reveal-on-scroll">
         <h2 data-es="Lo que dicen nuestros clientes" data-en="What our customers say">Lo que dicen nuestros clientes</h2>
         <div class="reviews-container">
-            <div class="review-card">
+            <div class="review-card glass">
                 <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                <p class="review-text" data-es="¡La mejor hamburguesa que he probado! El servicio es excelente y el ambiente muy acogedor." data-en="The best burger I've ever had! The service is excellent and the atmosphere is very welcoming.">"¡La mejor hamburguesa que he probado! El servicio es excelente y el ambiente muy acogedor."</p>
+                <p class="review-text" data-es="¡La mejor hamburguesa que he probado! El servicio es excelente y el ambiente muy acogedor." data-en="The best burger I've ever had! The service is excellent and the atmosphere very cozy.">¡La mejor hamburguesa que he probado! El servicio es excelente y el ambiente muy acogedor.</p>
                 <p class="review-author">- María García</p>
             </div>
-            <div class="review-card">
+            <div class="review-card glass">
                 <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                <p class="review-text" data-es="Las papas son increíbles y las porciones muy generosas. ¡Definitivamente volveré!" data-en="The fries are amazing and the portions are very generous. I'll definitely come back!">"Las papas son increíbles y las porciones muy generosas. ¡Definitivamente volveré!"</p>
+                <p class="review-text" data-es="Las papas son increíbles y las porciones muy generosas. ¡Definitivamente volveré!" data-en="The fries are amazing and the portions are very generous. Will definitely come back!">Las papas son increíbles y las porciones muy generosas. ¡Definitivamente volveré!</p>
                 <p class="review-author">- Carlos Mendoza</p>
             </div>
-            <div class="review-card">
+            <div class="review-card glass">
                 <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                <p class="review-text" data-es="Un lugar perfecto para disfrutar con familia y amigos. La comida es deliciosa." data-en="A perfect place to enjoy with family and friends. The food is delicious.">"Un lugar perfecto para disfrutar con familia y amigos. La comida es deliciosa."</p>
+                <p class="review-text" data-es="Un lugar perfecto para disfrutar con familia y amigos. La comida es deliciosa." data-en="A perfect place to enjoy with family and friends. The food is delicious.">Un lugar perfecto para disfrutar con familia y amigos. La comida es deliciosa.</p>
                 <p class="review-author">- Ana López</p>
             </div>
         </div>
     </section>
 
     <!-- Location Section -->
-    <section id="location" class="location-section">
+    <section id="location" class="location-section reveal-on-scroll">
         <div class="location-content">
-            <div class="location-info">
+            <div class="location-info glass">
                 <h2 data-es="Encuéntranos" data-en="Find Us">Encuéntranos</h2>
                 <div class="location-details">
                     <p><i class="fas fa-map-marker-alt"></i> <span data-es="Calle Principal #123, Centro, La Paz, BCS" data-en="Main Street #123, Downtown, La Paz, BCS">Calle Principal #123, Centro, La Paz, BCS</span></p>
@@ -111,22 +784,32 @@
                     <p><i class="fas fa-envelope"></i> info@lacreme.com</p>
                     <p><i class="fas fa-clock"></i> <span id="location-hours">Lun-Vie: 8:00am - 10:00pm | Sáb-Dom: 9:00am - 11:00pm</span></p>
                 </div>
-                <a href="https://maps.google.com" target="_blank" class="btn-primary">
+                <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn-primary">
                     <i class="fas fa-directions"></i>
                     <span data-es="Cómo llegar" data-en="Get Directions">Cómo llegar</span>
                 </a>
             </div>
             <div id="map">
                 <!-- Aquí iría el mapa de Google Maps -->
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3736.2681752806!2d-110.3109!3d24.1426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDA4JzMzLjQiTiAxMTDCsDE4JzM5LjIiVw!5e0!3m2!1ses!2smx!4v1234567890" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3736.2681752806!2d-110.3109!3d24.1426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDA4JzMzLjAiTiAxMTDCsDE4JzM5LjMiVw!5e0!3m2!1sen!2smx!4v1677070599839!5m2!1sen!2smx"
+                    class="google-map-iframe"
+                    allowfullscreen=""
+                    title="Ubicación en Google Maps"
+                ></iframe>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="reveal-on-scroll">
         <h2 data-es="¡Síguenos en redes sociales!" data-en="Follow us on social media!">¡Síguenos en redes sociales!</h2>
-        <div id="social-media-links"></div>
+        <div id="social-media-links">
+            <!-- Example: -->
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook" rel="noopener" tabindex="0"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram" rel="noopener" tabindex="0"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank" aria-label="Twitter" rel="noopener" tabindex="0"><i class="fab fa-twitter"></i></a>
+        </div>
         
         <div class="download-menu">
             <a href="menu.pdf" download>
@@ -140,5 +823,6 @@
     </footer>
 
     <script src="js/scripts.js"></script>
+    <script src="js/ui-effects.js"></script>
 </body>
 </html>
